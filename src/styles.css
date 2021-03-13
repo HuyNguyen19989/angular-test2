@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    overflow: scroll;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+}
+
+.col-4 {
+    width: 45%;
+    min-width: 292px;
+}
+
+.shadow {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-grid-tile .mat-figure {
+    align-items: unset !important
+}
+
+
+/* --- SMALL SCREEN --- */
+
+@media all and (max-width: 599px) {
+    .thumbnail img {
+        display: none;
+    }
+    .quantity>input {
+        width: 40px;
+        height: 40px;
+        left: calc(50% - 20px);
+    }
+    .remove svg {
+        width: 40px;
+        height: 40px;
+    }
+    .col-4 {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+/* --- MEDIUM & LARGE SCREEN --- */
+
+@media all and (min-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        width: 75%;
+        max-width: 960px;
+        height: 500px;
+    }
+    .thumbnail,
+    .detail {
+        float: left;
+    }
+    .thumbnail {
+        width: 35%;
+    }
+    .detail {
+        width: 65%;
+    }
+    .promotion,
+    .summary {
+        width: 50%;
+    }
+    .checkout {
+        width: 100%;
+    }
+    .checkout,
+    .summary {
+        text-align: right;
+    }
+}
+
+
+/* --- LARGE SCREEN --- */
+
+@media all and (min-width: 992px) {
+    html {
+        font-size: 16px;
+    }
+}

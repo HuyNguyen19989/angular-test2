@@ -1,0 +1,57 @@
+<div class="container" style="border-radius: 5px;border: 1px solid rgb(180, 180, 180);margin-top: 80px;">
+    <div style="padding: 20px;">
+        <div style="border-bottom: 1px solid rgb(180, 180, 180);">
+            <div style="width: 100%;">
+                <div style="float: right;">
+                    <a routerLink="/add">
+                        <button mat-button style="color: white;margin: 10px;margin-top: 0;background-color: #00A859;">
+                            Thêm Sản Phẩm
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h1 style="color: #00A859;text-align: left;display: inline-block;">
+                    Danh Sách Sản Phẩm
+                </h1>
+            </div>
+        </div>
+        <div>
+            <div style="margin-top: 10px;width: 100%;">
+                <div style="width: 100%;position: relative;">
+                    <input #searchBox id="search-box" (input)="search(searchBox.value)" class="search" placeholder="Tìm Kiếm" />
+                    <div style="display: inline-block;">
+                        <select #val style="color: grey;border: 0px;outline: 0px;" (change)="filCate(val.value)">
+                            <option value="all">Tất Cả</option>
+                            <option value="điện thoại">Điện Thoại</option>
+                            <option value="tủ lạnh">Tủ Lạnh</option>
+                            <option value="ti vi">Ti Vi</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;overflow-y: scroll;max-height: 350px;">
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Đơn Vị</th>
+                            <th>Barcode</th>
+                            <th>Danh Mục</th>
+                            <th>Thương Hiệu</th>
+                            <th>Giá Mua</th>
+                            <th>Giá Bán</th>
+                        </tr>
+                        <tr *ngFor="let item of items">
+                            <td>{{item.id}}</td>
+                            <td><a routerLink="/detail/{{item.id}}">{{item.name}}</a></td>
+                            <td>{{item.unit}}</td>
+                            <td>{{item.barcode}}</td>
+                            <td>{{item.category}}</td>
+                            <td>{{item.brand}}</td>
+                            <td>{{item.buyPrice | currency:'VND':'symbol':'1.0-0' }}</td>
+                            <td>{{item.sellPrice | currency:'VND':'symbol':'1.0-0'}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
